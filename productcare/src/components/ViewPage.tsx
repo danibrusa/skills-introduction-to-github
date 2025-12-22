@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { useProducts } from '../hooks/useProducts';
 import { Product } from '../types/Product';
 import './ViewPage.css';
@@ -38,9 +38,12 @@ const ViewPage: React.FC = () => {
     }
   };
 
-  // Sort products by expiration date descending
-  const sortedProducts = [...products].sort((a, b) => 
-    b.expirationDate.getTime() - a.expirationDate.getTime()
+  // Sort products by expiration date descending - memoized to avoid re-sorting on every render
+  const sortedProducts = useMemo(() => 
+    [...products].sort((a, b) => 
+      b.expirationDate.getTime() - a.expirationDate.getTime()
+    ),
+    [products]
   );
 
   if (loading) {

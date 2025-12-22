@@ -58,6 +58,30 @@ In this course, you will:
    - Scroll down and click the **Create repository** button at the bottom of the form.
 3. After your new repository is created, wait about 20 seconds, then refresh the page. Follow the step-by-step instructions in the new repository's README.
 
+## ProductCare Application
+
+This repository now includes **ProductCare**, a React application for tracking product expiration dates using barcode/QR code scanning.
+
+### Features
+
+- 📷 **Scan Products**: Use camera to scan barcodes/QR codes or manual entry
+- 📦 **Product Management**: Store name, expiration date, and description
+- 📋 **Archived View**: Filter products expired >10 days ago, sorted by date (descending)
+- 💾 **Local Storage**: All data persists in browser localStorage
+- 🏗️ **Clean Architecture**: Separated UI components, hooks, and services
+
+### Quick Start
+
+```bash
+cd productcare
+npm install
+npm start
+```
+
+Visit [http://localhost:3000](http://localhost:3000) to use the application.
+
+For more details, see the [ProductCare README](productcare/README.md).
+
 <footer>
 
 <!--

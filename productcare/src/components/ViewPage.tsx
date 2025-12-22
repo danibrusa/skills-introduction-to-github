@@ -4,7 +4,7 @@ import { Product } from '../types/Product';
 import './ViewPage.css';
 
 const ViewPage: React.FC = () => {
-  const { archivedProducts, loading, deleteProduct, refreshProducts } = useProducts();
+  const { products, loading, deleteProduct, refreshProducts } = useProducts();
 
   useEffect(() => {
     refreshProducts();
@@ -26,16 +26,27 @@ const ViewPage: React.FC = () => {
     return diffDays;
   };
 
+  const isExpired = (date: Date): boolean => {
+    const today = new Date();
+    const expirationDate = new Date(date);
+    return expirationDate < today;
+  };
+
   const handleDelete = (id: string) => {
     if (window.confirm('Are you sure you want to delete this product?')) {
       deleteProduct(id);
     }
   };
 
+  // Sort products by expiration date descending
+  const sortedProducts = [...products].sort((a, b) => 
+    b.expirationDate.getTime() - a.expirationDate.getTime()
+  );
+
   if (loading) {
     return (
       <div className="view-page">
-        <h1>Archived Products</h1>
+        <h1>All Products</h1>
         <div className="loading">Loading products...</div>
       </div>
     );
@@ -43,19 +54,19 @@ const ViewPage: React.FC = () => {
 
   return (
     <div className="view-page">
-      <h1>Archived Products</h1>
+      <h1>All Products</h1>
       <p className="subtitle">
-        Products with expiration date older than 10 days (sorted by expiration date, descending)
+        All products stored in the system (sorted by expiration date, descending)
       </p>
 
-      {archivedProducts.length === 0 ? (
+      {sortedProducts.length === 0 ? (
         <div className="empty-state">
-          <p>No archived products found.</p>
-          <p className="hint">Products that expired more than 10 days ago will appear here.</p>
+          <p>No products found.</p>
+          <p className="hint">Scan or add products to see them here.</p>
         </div>
       ) : (
         <div className="products-list">
-          {archivedProducts.map((product: Product) => (
+          {sortedProducts.map((product: Product) => (
             <div key={product.id} className="product-card">
               <div className="product-header">
                 <h3>{product.name}</h3>
@@ -71,11 +82,13 @@ const ViewPage: React.FC = () => {
               <div className="product-info">
                 <div className="info-row">
                   <span className="label">Expiration Date:</span>
-                  <span className="value expired">
+                  <span className={`value ${isExpired(product.expirationDate) ? 'expired' : ''}`}>
                     {formatDate(product.expirationDate)} 
-                    <span className="days-ago">
-                      ({getDaysAgo(product.expirationDate)} days ago)
-                    </span>
+                    {isExpired(product.expirationDate) && (
+                      <span className="days-ago">
+                        ({getDaysAgo(product.expirationDate)} days ago)
+                      </span>
+                    )}
                   </span>
                 </div>
                 
@@ -99,9 +112,9 @@ const ViewPage: React.FC = () => {
         </div>
       )}
 
-      {archivedProducts.length > 0 && (
+      {sortedProducts.length > 0 && (
         <div className="stats">
-          <p>Total archived products: <strong>{archivedProducts.length}</strong></p>
+          <p>Total products: <strong>{sortedProducts.length}</strong></p>
         </div>
       )}
     </div>

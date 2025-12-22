@@ -23,7 +23,7 @@ const Navigation: React.FC = () => {
             to="/view" 
             className={`nav-link ${location.pathname === '/view' ? 'active' : ''}`}
           >
-            📋 Archived
+            📋 Products
           </Link>
         </div>
       </div>

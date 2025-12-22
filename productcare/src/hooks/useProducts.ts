@@ -27,7 +27,7 @@ export const useProducts = () => {
     try {
       const newProduct: Product = {
         ...product,
-        id: Date.now().toString() + Math.random().toString(36).substr(2, 9),
+        id: Date.now().toString() + Math.random().toString(36).substring(2, 11),
         scannedDate: new Date()
       };
       LocalStorageService.saveProduct(newProduct);

@@ -25,6 +25,12 @@ const Navigation: React.FC = () => {
           >
             📋 Products
           </Link>
+          <Link 
+            to="/about" 
+            className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}
+          >
+            🎄 About
+          </Link>
         </div>
       </div>
     </nav>

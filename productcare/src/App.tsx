@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Navigation from './components/Navigation';
 import ScanPage from './components/ScanPage';
 import ViewPage from './components/ViewPage';
+import AboutPage from './components/AboutPage';
 import './App.css';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
             <Route path="/" element={<Navigate to="/scan" replace />} />
             <Route path="/scan" element={<ScanPage />} />
             <Route path="/view" element={<ViewPage />} />
+            <Route path="/about" element={<AboutPage />} />
           </Routes>
         </main>
       </div>

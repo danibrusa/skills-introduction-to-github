@@ -1,0 +1,328 @@
+.about-page {
+  min-height: calc(100vh - 100px);
+  background: linear-gradient(to bottom, #1a4d8f 0%, #2d5a9e 50%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.christmas-background {
+  position: relative;
+  min-height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* Snowflakes Animation */
+.snowflakes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.snowflake {
+  position: absolute;
+  top: -10%;
+  color: white;
+  font-size: 1.5em;
+  opacity: 0.8;
+  animation: fall linear infinite;
+}
+
+.snowflake:nth-child(1) {
+  left: 10%;
+  animation-duration: 8s;
+  animation-delay: 0s;
+  font-size: 1.2em;
+}
+
+.snowflake:nth-child(2) {
+  left: 20%;
+  animation-duration: 10s;
+  animation-delay: 2s;
+  font-size: 1.8em;
+}
+
+.snowflake:nth-child(3) {
+  left: 30%;
+  animation-duration: 9s;
+  animation-delay: 4s;
+  font-size: 1.5em;
+}
+
+.snowflake:nth-child(4) {
+  left: 40%;
+  animation-duration: 11s;
+  animation-delay: 1s;
+  font-size: 1.3em;
+}
+
+.snowflake:nth-child(5) {
+  left: 60%;
+  animation-duration: 8s;
+  animation-delay: 3s;
+  font-size: 1.6em;
+}
+
+.snowflake:nth-child(6) {
+  left: 70%;
+  animation-duration: 10s;
+  animation-delay: 5s;
+  font-size: 1.4em;
+}
+
+.snowflake:nth-child(7) {
+  left: 80%;
+  animation-duration: 9s;
+  animation-delay: 2s;
+  font-size: 1.7em;
+}
+
+.snowflake:nth-child(8) {
+  left: 90%;
+  animation-duration: 11s;
+  animation-delay: 0s;
+  font-size: 1.5em;
+}
+
+@keyframes fall {
+  0% {
+    top: -10%;
+    opacity: 0.8;
+  }
+  100% {
+    top: 100%;
+    opacity: 0.2;
+  }
+}
+
+/* Christmas Trees */
+.christmas-trees {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 50px 50px;
+  pointer-events: none;
+}
+
+.tree {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 4em;
+  animation: sway 3s ease-in-out infinite;
+}
+
+.tree-left {
+  animation-delay: 0s;
+}
+
+.tree-right {
+  animation-delay: 1.5s;
+}
+
+.tree-star {
+  font-size: 0.5em;
+  animation: twinkle 1s ease-in-out infinite;
+}
+
+.tree-top {
+  margin-top: -10px;
+}
+
+.tree-ornaments {
+  display: flex;
+  gap: 10px;
+  margin-top: -20px;
+}
+
+.ornament {
+  font-size: 0.3em;
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.ornament:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.ornament:nth-child(2) {
+  animation-delay: 0.7s;
+}
+
+.ornament:nth-child(3) {
+  animation-delay: 1.4s;
+}
+
+@keyframes sway {
+  0%, 100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+/* Animated Message */
+.animated-message {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  padding: 20px;
+  max-width: 90%;
+}
+
+.letter,
+.space {
+  display: inline-block;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 
+    0 0 10px rgba(255, 215, 0, 0.8),
+    0 0 20px rgba(255, 215, 0, 0.6),
+    0 0 30px rgba(255, 215, 0, 0.4),
+    2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: growText 3s ease-in-out infinite;
+}
+
+.space {
+  width: 0.3em;
+}
+
+.letter:nth-child(1) { animation-delay: 0s; }
+.letter:nth-child(2) { animation-delay: 0.1s; }
+.letter:nth-child(3) { animation-delay: 0.2s; }
+.letter:nth-child(4) { animation-delay: 0.3s; }
+.letter:nth-child(5) { animation-delay: 0.4s; }
+.letter:nth-child(6) { animation-delay: 0.5s; }
+.letter:nth-child(8) { animation-delay: 0.7s; }
+.letter:nth-child(9) { animation-delay: 0.8s; }
+.letter:nth-child(10) { animation-delay: 0.9s; }
+.letter:nth-child(11) { animation-delay: 1s; }
+.letter:nth-child(12) { animation-delay: 1.1s; }
+.letter:nth-child(14) { animation-delay: 1.3s; }
+.letter:nth-child(15) { animation-delay: 1.4s; }
+.letter:nth-child(16) { animation-delay: 1.5s; }
+.letter:nth-child(17) { animation-delay: 1.6s; }
+.letter:nth-child(18) { animation-delay: 1.7s; }
+
+@keyframes growText {
+  0% {
+    font-size: 1em;
+    color: #fff;
+  }
+  50% {
+    font-size: calc(50vh * 0.12);
+    color: #ffd700;
+  }
+  100% {
+    font-size: 1em;
+    color: #fff;
+  }
+}
+
+/* Christmas Decorations */
+.christmas-decorations {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  gap: 30px;
+  font-size: 2.5em;
+  z-index: 5;
+}
+
+.decoration {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.decoration:nth-child(1) { animation-delay: 0s; }
+.decoration:nth-child(2) { animation-delay: 0.4s; }
+.decoration:nth-child(3) { animation-delay: 0.8s; }
+.decoration:nth-child(4) { animation-delay: 1.2s; }
+.decoration:nth-child(5) { animation-delay: 1.6s; }
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .tree {
+    font-size: 2.5em;
+  }
+
+  .animated-message {
+    padding: 10px;
+  }
+
+  .christmas-decorations {
+    font-size: 1.8em;
+    gap: 15px;
+  }
+
+  @keyframes growText {
+    0% {
+      font-size: 0.8em;
+      color: #fff;
+    }
+    50% {
+      font-size: calc(50vh * 0.08);
+      color: #ffd700;
+    }
+    100% {
+      font-size: 0.8em;
+      color: #fff;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .christmas-trees {
+    padding: 0 20px 30px;
+  }
+
+  .tree {
+    font-size: 2em;
+  }
+
+  .christmas-decorations {
+    font-size: 1.5em;
+    gap: 10px;
+  }
+}

@@ -59,6 +59,30 @@ Branches allow you to separate your work from the `main` branch. In other words,
 
 6. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
 
+## ProductCare Application
+
+This repository now includes **ProductCare**, a React application for tracking product expiration dates using barcode/QR code scanning.
+
+### Features
+
+- 📷 **Scan Products**: Use camera to scan barcodes/QR codes or manual entry
+- 📦 **Product Management**: Store name, expiration date, and description
+- 📋 **Archived View**: Filter products expired >10 days ago, sorted by date (descending)
+- 💾 **Local Storage**: All data persists in browser localStorage
+- 🏗️ **Clean Architecture**: Separated UI components, hooks, and services
+
+### Quick Start
+
+```bash
+cd productcare
+npm install
+npm start
+```
+
+Visit [http://localhost:3000](http://localhost:3000) to use the application.
+
+For more details, see the [ProductCare README](productcare/README.md).
+
 <footer>
 
 <!--

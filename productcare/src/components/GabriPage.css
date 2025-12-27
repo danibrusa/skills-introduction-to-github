@@ -1,0 +1,335 @@
+.gabri-page {
+  min-height: calc(100vh - 100px);
+  position: relative;
+  overflow: hidden;
+}
+
+.inter-background {
+  position: relative;
+  min-height: calc(100vh - 100px);
+  background: linear-gradient(135deg, #0068a8 0%, #000000 50%, #0068a8 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Inter stripes background */
+.inter-stripes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  opacity: 0.3;
+  transform: rotate(25deg) scale(1.5);
+}
+
+.stripe {
+  flex: 1;
+  height: 100%;
+}
+
+.stripe.blue {
+  background-color: #0068a8;
+}
+
+.stripe.black {
+  background-color: #000000;
+}
+
+/* Floating badges animation */
+.floating-badges {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.badge {
+  position: absolute;
+  font-size: 3em;
+  animation: float 6s ease-in-out infinite;
+}
+
+.badge-1 {
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.badge-2 {
+  top: 20%;
+  right: 15%;
+  animation-delay: 1s;
+}
+
+.badge-3 {
+  bottom: 20%;
+  left: 15%;
+  animation-delay: 2s;
+}
+
+.badge-4 {
+  top: 60%;
+  right: 20%;
+  animation-delay: 3s;
+}
+
+.badge-5 {
+  bottom: 30%;
+  right: 10%;
+  animation-delay: 4s;
+}
+
+.badge-6 {
+  top: 40%;
+  left: 20%;
+  animation-delay: 5s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-30px) rotate(180deg);
+    opacity: 1;
+  }
+}
+
+/* Scrolling text container */
+.scrolling-text-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 40px 0;
+  z-index: 10;
+}
+
+.scrolling-text {
+  display: flex;
+  width: fit-content;
+  animation: scroll-left 15s linear infinite;
+  gap: 100px;
+}
+
+.text-content {
+  font-size: 8vw;
+  font-weight: 900;
+  color: #ffffff;
+  text-shadow: 
+    0 0 20px rgba(0, 104, 168, 0.8),
+    0 0 40px rgba(0, 104, 168, 0.6),
+    3px 3px 6px rgba(0, 0, 0, 0.8),
+    -2px -2px 4px rgba(255, 255, 255, 0.3);
+  white-space: nowrap;
+  letter-spacing: 0.1em;
+  font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
+  text-transform: uppercase;
+  background: linear-gradient(45deg, #ffffff 30%, #0068a8 50%, #ffffff 70%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shine 3s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Inter badge */
+.inter-badge {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  z-index: 5;
+}
+
+.badge-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0068a8 0%, #000000 100%);
+  border: 4px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(0, 104, 168, 0.6);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.badge-text {
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.badge-text .fc {
+  display: block;
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+.badge-text .inter {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 1px;
+  margin: 2px 0;
+}
+
+.badge-text .milano {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Football field lines */
+.field-lines {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.2;
+}
+
+.center-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+}
+
+.center-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 100%;
+  background-color: #ffffff;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .text-content {
+    font-size: 12vw;
+  }
+
+  .badge {
+    font-size: 2em;
+  }
+
+  .inter-badge {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .badge-circle {
+    width: 80px;
+    height: 80px;
+  }
+
+  .badge-text .fc {
+    font-size: 16px;
+  }
+
+  .badge-text .inter {
+    font-size: 7px;
+  }
+
+  .badge-text .milano {
+    font-size: 8px;
+  }
+
+  .center-circle {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-content {
+    font-size: 15vw;
+  }
+
+  .scrolling-text {
+    gap: 50px;
+  }
+
+  .badge {
+    font-size: 1.5em;
+  }
+
+  .badge-circle {
+    width: 60px;
+    height: 60px;
+  }
+
+  .badge-text .fc {
+    font-size: 12px;
+  }
+
+  .badge-text .inter {
+    font-size: 6px;
+  }
+
+  .badge-text .milano {
+    font-size: 7px;
+  }
+}
+
+/* Accessibility: Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .scrolling-text {
+    animation: none;
+  }
+
+  .badge {
+    animation: none;
+  }
+
+  .badge-circle {
+    animation: none;
+  }
+
+  .text-content {
+    animation: none;
+    background: #ffffff;
+    -webkit-text-fill-color: #ffffff;
+  }
+
+  .inter-stripes {
+    animation: none;
+  }
+}

@@ -4,6 +4,7 @@ import Navigation from './components/Navigation';
 import ScanPage from './components/ScanPage';
 import ViewPage from './components/ViewPage';
 import AboutPage from './components/AboutPage';
+import GabriPage from './components/GabriPage';
 import './App.css';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
             <Route path="/scan" element={<ScanPage />} />
             <Route path="/view" element={<ViewPage />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/gabri" element={<GabriPage />} />
           </Routes>
         </main>
       </div>

@@ -31,6 +31,12 @@ const Navigation: React.FC = () => {
           >
             🎄 About
           </Link>
+          <Link 
+            to="/gabri" 
+            className={`nav-link ${location.pathname === '/gabri' ? 'active' : ''}`}
+          >
+            ⚽ Vai a Gabri
+          </Link>
         </div>
       </div>
     </nav>

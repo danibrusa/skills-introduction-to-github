@@ -308,3 +308,28 @@
     font-size: 7px;
   }
 }
+
+/* Accessibility: Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .scrolling-text {
+    animation: none;
+  }
+
+  .badge {
+    animation: none;
+  }
+
+  .badge-circle {
+    animation: none;
+  }
+
+  .text-content {
+    animation: none;
+    background: #ffffff;
+    -webkit-text-fill-color: #ffffff;
+  }
+
+  .inter-stripes {
+    animation: none;
+  }
+}
